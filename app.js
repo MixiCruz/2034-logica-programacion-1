@@ -1,11 +1,18 @@
- alert('Bienvenidos al juego del número secreto');
+ alert('Bienvenidos al juego del número secreto'); 
+ 
 // variables
-let numeroSecreto = 6;
+let numeroMaximo = 100;
+let numeroSecreto = Math.floor(Math.random()*numeroMaximo)+1;
 let numeroUsuario = 0;
 let intentos = 1;
-let maximosintentos = 3;
+let maximosintentos = 5;
+
+console.log(numeroSecreto);
+
 while (numeroUsuario != numeroSecreto){
-    numeroUsuario = prompt('Elige un número entre 1 y 10')
+    numeroUsuario = parseInt(prompt(`Elige un número entre 1 y ${numeroMaximo}, por favor`));
+
+console.log(typeof(numeroUsuario));
     
     if (numeroUsuario == numeroSecreto){
         alert(`Acertaste, el número secreto es: ${numeroSecreto}. Lo hiciste en ${intentos} ${intentos == 1 ? 'vez' : 'veces'}`);
@@ -21,7 +28,4 @@ while (numeroUsuario != numeroSecreto){
             break;
         }
     }
- }
-
-
-
+ } 
